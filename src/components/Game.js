@@ -24,7 +24,9 @@ const Game = ({ name, rating }) => {
 			<MainGameData>
 				<h2>{name}</h2>
 				<OverAllRating>
-					<RatingText>{Math.floor(overAllStars)}/5</RatingText>
+					<RatingText>
+						{Math.round((overAllStars + Number.EPSILON) * 100) / 100}/5
+					</RatingText>
 					<Stars>{getStars(overAllStars)}</Stars>
 				</OverAllRating>
 			</MainGameData>
