@@ -10,5 +10,6 @@ module.exports = {
 			options: { name: "content", path: `${__dirname}/content/` },
 		},
 		"gatsby-transformer-remark",
+		"gatsby-plugin-react-helmet",
 	],
 };

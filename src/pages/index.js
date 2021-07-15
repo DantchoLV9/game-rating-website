@@ -1,33 +1,26 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Game from "../components/Game";
 import styled from "styled-components";
 
 const IndexPage = ({ data }) => {
-	console.log(data);
 	return (
-		<Layout title={data.site.siteMetadata.title}>
-			<StyledMainContainer>
-				<StyledLogo>{data.site.siteMetadata.title}</StyledLogo>
-				<StyledGamesList>
-					{data.allMarkdownRemark.edges.map((data) => (
+		<Layout pageTitle={`${data.site.siteMetadata.title}`}>
+			<StyledGamesList>
+				{data.allMarkdownRemark.edges.map((data) => (
+					<StyledLink key={data.node.id} to={data.node.fields.slug}>
 						<Game
 							key={data.node.id}
 							name={data.node.frontmatter.title}
 							rating={data.node.frontmatter.rating}
 						/>
-					))}
-				</StyledGamesList>
-			</StyledMainContainer>
+					</StyledLink>
+				))}
+			</StyledGamesList>
 		</Layout>
 	);
 };
-
-const StyledMainContainer = styled.div`
-	height: 100vh;
-	padding: 3rem;
-`;
 
 const StyledGamesList = styled.div`
 	display: flex;
@@ -47,13 +40,10 @@ const StyledGamesList = styled.div`
 	}
 `;
 
-const StyledLogo = styled.h1`
-	font-size: 5rem;
-	font-weight: lighter;
-	text-align: center;
-	font-family: "Zen Tokyo Zoo", cursive;
-	margin-bottom: 3rem;
-	color: #333534;
+const StyledLink = styled((props) => <Link {...props} />)`
+	text-decoration: none;
+	color: inherit;
+	width: 100%;
 `;
 
 export const query = graphql`
@@ -75,6 +65,9 @@ export const query = graphql`
 						}
 					}
 					id
+					fields {
+						slug
+					}
 				}
 			}
 		}
