@@ -35,7 +35,6 @@ const StyledRatings = styled.div`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	margin: 1rem 0rem;
 	width: 100%;
 	@media (max-width: 780px) {
 		flex-direction: column;
@@ -52,7 +51,7 @@ const SectionHeading = styled.h2`
 	font-size: 2rem;
 	text-align: center;
 	grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
-	margin-bottom: 1rem;
+	margin: 1rem 0rem;
 	&:before {
 		content: "";
 		border-top: 3px solid #cccecd;

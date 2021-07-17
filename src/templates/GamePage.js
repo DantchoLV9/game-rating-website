@@ -4,9 +4,14 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Ratings from "../components/GameDetails/Ratings";
 import Stars from "../components/Stars";
+import Image from "../components/Image";
+import Gallery from "../components/Gallery";
 
 const GamePage = ({ data }) => {
 	const game = data.markdownRemark;
+	const mainImage = game.frontmatter.images.mainImage;
+	const galleryImages = game.frontmatter.images.galleryImages;
+
 	const overAllStars =
 		(game.frontmatter.rating.graphics +
 			game.frontmatter.rating.gameplay +
@@ -26,9 +31,16 @@ const GamePage = ({ data }) => {
 						<Stars rating={overAllStars} />
 					</OverallScore>
 				</GameHeader>
+				{mainImage && <Image image={mainImage} alt={game.frontmatter.title} />}
 				<Ratings rating={game.frontmatter.rating} />
 				<SectionHeading>Article</SectionHeading>
 				<div dangerouslySetInnerHTML={{ __html: game.html }} />
+				{galleryImages && (
+					<>
+						<SectionHeading>Pictures</SectionHeading>
+						<Gallery pictures={galleryImages} alt={game.frontmatter.title} />
+					</>
+				)}
 			</GameDetails>
 		</Layout>
 	);
@@ -84,7 +96,7 @@ const SectionHeading = styled.h2`
 	font-size: 2rem;
 	text-align: center;
 	grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
-	margin-bottom: 1rem;
+	margin: 1rem 0rem;
 	&:before {
 		content: "";
 		border-top: 3px solid #cccecd;
@@ -107,6 +119,19 @@ export const query = graphql`
 					gameplay
 					graphics
 					story
+				}
+				images {
+					mainImage {
+						childImageSharp {
+							gatsbyImageData
+						}
+					}
+					galleryImages {
+						childImageSharp {
+							gatsbyImageData
+						}
+						id
+					}
 				}
 			}
 		}
