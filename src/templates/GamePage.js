@@ -5,10 +5,12 @@ import Layout from "../components/Layout";
 import Ratings from "../components/GameDetails/Ratings";
 import Stars from "../components/Stars";
 import Image from "../components/Image";
+import Gallery from "../components/Gallery";
 
 const GamePage = ({ data }) => {
 	const game = data.markdownRemark;
 	const mainImage = game.frontmatter.images.mainImage;
+	const galleryImages = game.frontmatter.images.galleryImages;
 
 	const overAllStars =
 		(game.frontmatter.rating.graphics +
@@ -33,6 +35,12 @@ const GamePage = ({ data }) => {
 				<Ratings rating={game.frontmatter.rating} />
 				<SectionHeading>Article</SectionHeading>
 				<div dangerouslySetInnerHTML={{ __html: game.html }} />
+				{galleryImages && (
+					<>
+						<SectionHeading>Pictures</SectionHeading>
+						<Gallery pictures={galleryImages} alt={game.frontmatter.title} />
+					</>
+				)}
 			</GameDetails>
 		</Layout>
 	);
@@ -117,6 +125,12 @@ export const query = graphql`
 						childImageSharp {
 							gatsbyImageData
 						}
+					}
+					galleryImages {
+						childImageSharp {
+							gatsbyImageData
+						}
+						id
 					}
 				}
 			}
