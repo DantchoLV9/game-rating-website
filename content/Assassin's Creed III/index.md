@@ -8,4 +8,4 @@ images:
   }
 ---
 
-# Assassin's Creed III
+# No article yet. Just testing.

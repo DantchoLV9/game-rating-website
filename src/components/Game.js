@@ -1,6 +1,6 @@
 import React from "react";
-import Stars from "./Stars";
 import styled from "styled-components";
+import Stars from "./Stars";
 
 const Game = ({ name, rating }) => {
 	const overAllRating = (rating.graphics + rating.gameplay + rating.story) / 3;
@@ -54,7 +54,7 @@ const OverAllRating = styled.div`
 
 const RatingText = styled.p`
 	font-size: 1.3rem;
-	color: #8a8a8a;
+	color: #525252;
 `;
 
 export default Game;

@@ -1,6 +1,6 @@
 ---
 title: "Assassin's Creed III: Liberation"
-rating: { "graphics": 3, "gameplay": 4, "story": 3 }
+rating: { "graphics": 3, "gameplay": 3, "story": 2 }
 images:
   {
     mainImage: "main.jpg",
@@ -15,5 +15,3 @@ images:
       ],
   }
 ---
-
-# Assassin's Creed III: Liberation

@@ -7,8 +7,18 @@ import "../styles/global.css";
 const Layout = ({ pageTitle, children }) => {
 	return (
 		<>
-			<Helmet>
+			<Helmet
+				htmlAttributes={{
+					lang: "en",
+				}}
+			>
 				<title>{pageTitle}</title>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link
+					href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Zen+Tokyo+Zoo&display=swap"
+					rel="stylesheet"
+				/>
 			</Helmet>
 			<StyledMain>
 				<Header />
@@ -19,7 +29,6 @@ const Layout = ({ pageTitle, children }) => {
 };
 
 const StyledMain = styled.main`
-	height: 100vh;
 	padding: 3rem;
 `;
 

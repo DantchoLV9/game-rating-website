@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Game from "../components/Game";
+import { graphql } from "gatsby";
 import styled from "styled-components";
+import Layout from "../components/Layout";
+import StyledLink from "../components/StyledLink";
+import Game from "../components/Game";
 
 const IndexPage = ({ data }) => {
 	return (
@@ -38,12 +39,6 @@ const StyledGamesList = styled.div`
 		width: 100%;
 		row-gap: 1rem;
 	}
-`;
-
-const StyledLink = styled((props) => <Link {...props} />)`
-	text-decoration: none;
-	color: inherit;
-	width: 100%;
 `;
 
 export const query = graphql`
