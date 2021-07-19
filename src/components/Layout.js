@@ -19,6 +19,13 @@ const Layout = ({ pageTitle, children }) => {
 					href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Zen+Tokyo+Zoo&display=swap"
 					rel="stylesheet"
 				/>
+				<script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=G-QPJVJF2T93"
+				></script>
+				<script>
+					{`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-QPJVJF2T93');`}
+				</script>
 			</Helmet>
 			<StyledMain>
 				<Header />
