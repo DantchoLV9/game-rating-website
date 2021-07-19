@@ -1,6 +1,7 @@
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
+import StyledLink from "./StyledLink";
 
 const Header = () => {
 	const data = useStaticQuery(graphql`
@@ -26,11 +27,6 @@ const StyledLogo = styled.h1`
 	font-family: "Zen Tokyo Zoo", cursive;
 	margin-bottom: 3rem;
 	color: #333534;
-`;
-
-const StyledLink = styled((props) => <Link {...props} />)`
-	text-decoration: none;
-	color: inherit;
 `;
 
 export default Header;

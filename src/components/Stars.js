@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import fullStarIcon from "../images/full-star.svg";
+import halfStarIcon from "../images/half-star.svg";
 import emptyStarIcon from "../images/empty-star.svg";
 
 const Stars = ({ rating }) => {
@@ -10,7 +11,11 @@ const Stars = ({ rating }) => {
 			if (i <= Math.floor(rating)) {
 				stars.push(<img alt="" key={i} src={fullStarIcon}></img>);
 			} else {
-				stars.push(<img alt="" key={i} src={emptyStarIcon}></img>);
+				if (i - rating > 0.5) {
+					stars.push(<img alt="" key={i} src={emptyStarIcon}></img>);
+				} else {
+					stars.push(<img alt="" key={i} src={halfStarIcon}></img>);
+				}
 			}
 		}
 		return stars;

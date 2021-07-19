@@ -7,7 +7,7 @@ const Image = ({ image, alt }) => {
 };
 
 const StyledImage = styled((props) => <GatsbyImage {...props} />)`
-	margin-top: 1rem;
+	margin-bottom: 1rem;
 	border-radius: 10px;
 `;
 
