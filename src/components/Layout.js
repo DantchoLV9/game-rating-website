@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Header from "./Header";
 import "../styles/global.css";
+import Navbar from "./Navbar";
 
 const Layout = ({ pageTitle, children }) => {
 	return (
@@ -29,6 +30,7 @@ const Layout = ({ pageTitle, children }) => {
 			</Helmet>
 			<StyledMain>
 				<Header />
+				<Navbar />
 				{children}
 			</StyledMain>
 		</>

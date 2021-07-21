@@ -25,7 +25,7 @@ const StyledLogo = styled.h1`
 	font-weight: lighter;
 	text-align: center;
 	font-family: "Zen Tokyo Zoo", cursive;
-	margin-bottom: 3rem;
+	margin-bottom: 1.5rem;
 	color: #333534;
 `;
 

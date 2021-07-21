@@ -31,6 +31,10 @@ const StyledGamesList = styled.div`
 	width: 50%;
 	margin: auto;
 
+	@media (max-width: 1600px) {
+		width: 65%;
+	}
+
 	@media (max-width: 1300px) {
 		width: 80%;
 	}
