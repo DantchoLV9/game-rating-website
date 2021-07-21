@@ -2,12 +2,14 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 import StyledLink from "../components/StyledLink";
 import Game from "../components/Game";
 
 const IndexPage = ({ data }) => {
 	return (
-		<Layout pageTitle={`${data.site.siteMetadata.title}`}>
+		<Layout pageTitle={`Home | ${data.site.siteMetadata.title}`}>
+			<Seo />
 			<StyledGamesList>
 				{data.allMarkdownRemark.edges.map((data) => (
 					<StyledLink key={data.node.id} to={data.node.fields.slug}>
