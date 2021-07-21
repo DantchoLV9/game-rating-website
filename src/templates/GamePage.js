@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 import GameHeader from "../components/GameDetails/GameHeader";
 import Image from "../components/GameDetails/Image";
 import Ratings from "../components/GameDetails/Ratings";
@@ -19,8 +20,9 @@ const GamePage = ({ data }) => {
 		3;
 	return (
 		<Layout
-			pageTitle={`${data.site.siteMetadata.title} | ${game.frontmatter.title}`}
+			pageTitle={`${game.frontmatter.title} | ${data.site.siteMetadata.title}`}
 		>
+			<Seo gameSEO gameNode={game} />
 			<GameDetails>
 				<GameHeader
 					gameTitle={game.frontmatter.title}
@@ -44,6 +46,10 @@ const GameDetails = styled.div`
 	width: 50%;
 	margin: auto;
 	color: #333534;
+	@media (max-width: 1600px) {
+		width: 65%;
+	}
+
 	@media (max-width: 1300px) {
 		width: 80%;
 	}
@@ -57,6 +63,9 @@ export const query = graphql`
 	query ($slug: String!) {
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
+			fields {
+				slug
+			}
 			frontmatter {
 				title
 				rating {
@@ -69,6 +78,7 @@ export const query = graphql`
 						childImageSharp {
 							gatsbyImageData
 						}
+						publicURL
 					}
 					galleryImages {
 						childImageSharp {
