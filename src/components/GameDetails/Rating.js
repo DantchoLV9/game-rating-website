@@ -21,6 +21,10 @@ const StyledRating = styled.div`
 	p {
 		font-size: 1.2rem;
 	}
+
+	@media (max-width: 375px) {
+		flex-direction: column;
+	}
 `;
 
 const Score = styled.div`

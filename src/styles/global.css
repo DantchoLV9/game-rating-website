@@ -9,3 +9,9 @@ body {
 	font-family: "Noto Sans TC", sans-serif;
 	font-weight: lighter;
 }
+
+@media (max-width: 780px) {
+	body {
+		font-weight: bold;
+	}
+}

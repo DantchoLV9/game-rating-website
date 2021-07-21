@@ -44,6 +44,10 @@ const GameDetails = styled.div`
 	width: 50%;
 	margin: auto;
 	color: #333534;
+	@media (max-width: 1600px) {
+		width: 65%;
+	}
+
 	@media (max-width: 1300px) {
 		width: 80%;
 	}
