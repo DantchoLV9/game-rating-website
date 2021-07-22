@@ -28,11 +28,10 @@ const Image = ({ image, alt }) => {
 
 	return (
 		<>
-			<StyledImage
-				onClick={openImageModalHandler}
-				image={getImage(image)}
-				alt={alt}
-			/>
+			<div onClick={openImageModalHandler}>
+				<StyledImage image={getImage(image)} alt={alt} />
+			</div>
+
 			{imageModalState && (
 				<ImageModalBackground
 					className="background"
