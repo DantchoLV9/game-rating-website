@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import useKeypress from "../../hooks/useKeypress";
 import styled from "styled-components";
@@ -22,6 +22,10 @@ const Image = ({ image, alt }) => {
 			setImageModelState(false);
 		}
 	};
+
+	useEffect(() => {
+		return closeImageModalHandler();
+	}, []);
 
 	useKeypress("Escape", closeImageModalHandler);
 
