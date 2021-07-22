@@ -8,6 +8,7 @@ const Image = ({ image, alt }) => {
 
 	const openImageModalHandler = () => {
 		document.body.style.overflow = "hidden";
+		console.log("test");
 		setImageModelState(true);
 	};
 
