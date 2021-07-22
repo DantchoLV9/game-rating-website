@@ -22,7 +22,7 @@ const StyledNavbar = styled.div`
 	.active {
 		background: #faeaea;
 		border: 2px solid #ffb9b9;
-		color: #ff5959;
+		color: #990000;
 	}
 	@media (max-width: 1600px) {
 		width: 65%;
@@ -55,7 +55,7 @@ const StyledNavLinkElement = styled((props) => <Link {...props} />)`
 	:hover {
 		background: #faeaea;
 		border: 2px solid #ffb9b9;
-		color: #ff5959;
+		color: #990000;
 	}
 	@media (max-width: 475px) {
 		width: 100%;
