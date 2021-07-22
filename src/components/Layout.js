@@ -1,13 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
+import GlobalStyles from "./GlobalStyles";
 import Header from "./Header";
-import "../styles/global.css";
 import Navbar from "./Navbar";
 
 const Layout = ({ pageTitle, children }) => {
 	return (
 		<>
+			<GlobalStyles />
 			<Helmet
 				htmlAttributes={{
 					lang: "en",
