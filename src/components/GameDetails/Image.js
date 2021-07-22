@@ -28,9 +28,14 @@ const Image = ({ image, alt }) => {
 
 	return (
 		<>
-			<div onClick={openImageModalHandler}>
+			<span
+				onKeyPress={(event) => event.key === "Enter" && openImageModalHandler}
+				role="button"
+				tabIndex={-1}
+				onClick={openImageModalHandler}
+			>
 				<StyledImage image={getImage(image)} alt={alt} />
-			</div>
+			</span>
 
 			{imageModalState && (
 				<ImageModalBackground
