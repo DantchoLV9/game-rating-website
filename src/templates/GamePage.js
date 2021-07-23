@@ -19,9 +19,7 @@ const GamePage = ({ data }) => {
 			game.frontmatter.rating.story) /
 		3;
 	return (
-		<Layout
-			pageTitle={`${game.frontmatter.title} | ${data.site.siteMetadata.title}`}
-		>
+		<Layout pageTitle={game.frontmatter.title}>
 			<Seo gameSEO gameNode={game} />
 			<GameDetails>
 				<GameHeader

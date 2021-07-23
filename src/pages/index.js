@@ -8,7 +8,7 @@ import Game from "../components/Game";
 
 const IndexPage = ({ data }) => {
 	return (
-		<Layout pageTitle={`Home | ${data.site.siteMetadata.title}`}>
+		<Layout pageTitle="Home">
 			<Seo />
 			<StyledGamesList>
 				{data.allMarkdownRemark.edges.map((data) => (

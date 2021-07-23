@@ -1,21 +1,11 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import StyledLink from "./StyledLink";
 
-const Header = () => {
-	const data = useStaticQuery(graphql`
-		{
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
+const Header = ({ title }) => {
 	return (
 		<StyledLogo>
-			<StyledLink to="/">{data.site.siteMetadata.title}</StyledLink>
+			<StyledLink to="/">{title}</StyledLink>
 		</StyledLogo>
 	);
 };
