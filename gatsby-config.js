@@ -1,3 +1,4 @@
+require("dotenv").config();
 module.exports = {
 	siteMetadata: {
 		siteUrl: "https://gamer8.dantcho.com",
@@ -13,6 +14,14 @@ module.exports = {
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				icon: "src/images/favicon.png",
+			},
+		},
+		{
+			resolve: "gatsby-plugin-algolia",
+			options: {
+				appId: process.env.GATSBY_ALGOLIA_APP_ID,
+				apiKey: process.env.ALGOLIA_ADMIN_KEY,
+				queries: require("./src/utils/algolia-queries"),
 			},
 		},
 		"gatsby-transformer-remark",
