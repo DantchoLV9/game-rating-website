@@ -13,18 +13,14 @@ const GamePage = ({ data }) => {
 	const game = data.markdownRemark;
 	const mainImage = game.frontmatter.images.mainImage;
 	const galleryImages = game.frontmatter.images.galleryImages;
-	const overAllRating =
-		(game.frontmatter.rating.graphics +
-			game.frontmatter.rating.gameplay +
-			game.frontmatter.rating.story) /
-		3;
+
 	return (
 		<Layout pageTitle={game.frontmatter.title}>
 			<Seo gameSEO gameNode={game} />
 			<GameDetails>
 				<GameHeader
 					gameTitle={game.frontmatter.title}
-					overAllRating={overAllRating}
+					rating={game.frontmatter.rating}
 				/>
 				{mainImage && <Image image={mainImage} alt={game.frontmatter.title} />}
 				<Ratings rating={game.frontmatter.rating} />

@@ -9,6 +9,12 @@ module.exports = {
 			resolve: "gatsby-source-filesystem",
 			options: { name: "content", path: `${__dirname}/content/` },
 		},
+		{
+			resolve: "gatsby-plugin-manifest",
+			options: {
+				icon: "src/images/favicon.png",
+			},
+		},
 		"gatsby-transformer-remark",
 		"gatsby-plugin-react-helmet",
 		`gatsby-plugin-image`,

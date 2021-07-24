@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import LogoImage from "../images/logo.png";
 
 const Seo = ({ gameSEO, gameNode }) => {
 	const data = useStaticQuery(graphql`
@@ -14,12 +15,21 @@ const Seo = ({ gameSEO, gameNode }) => {
 	`);
 	let title;
 	let description;
+	let image;
 	if (gameSEO) {
 		title = `${gameNode.frontmatter.title} | GameR8`;
 		description = `A review of ${gameNode.frontmatter.title} by Yordan Hristov.`;
+		if (gameNode.frontmatter.images.mainImage === null) {
+			image = data.site.siteMetadata.siteUrl + LogoImage;
+		} else {
+			image =
+				data.site.siteMetadata.siteUrl +
+				gameNode.frontmatter.images.mainImage.publicURL;
+		}
 	} else {
 		title = "GameR8";
 		description = "Game reviews by Yordan Hristov.";
+		image = data.site.siteMetadata.siteUrl + LogoImage;
 	}
 	return (
 		<Helmet>
@@ -35,15 +45,7 @@ const Seo = ({ gameSEO, gameNode }) => {
 			/>
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
-			{gameSEO && (
-				<meta
-					property="og:image"
-					content={
-						data.site.siteMetadata.siteUrl +
-						gameNode.frontmatter.images.mainImage.publicURL
-					}
-				/>
-			)}
+			{gameSEO && <meta property="og:image" content={image} />}
 			<meta property="twitter:card" content="summary_large_image" />
 			<meta
 				property="twitter:url"
@@ -55,15 +57,7 @@ const Seo = ({ gameSEO, gameNode }) => {
 			/>
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
-			{gameSEO && (
-				<meta
-					name="twitter:image"
-					content={
-						data.site.siteMetadata.siteUrl +
-						gameNode.frontmatter.images.mainImage.publicURL
-					}
-				/>
-			)}
+			<meta name="twitter:image" content={image} />
 		</Helmet>
 	);
 };

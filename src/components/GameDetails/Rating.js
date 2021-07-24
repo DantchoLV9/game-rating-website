@@ -4,13 +4,17 @@ import Stars from "../Stars";
 
 const Rating = ({ ratingName, rating }) => {
 	return (
-		<StyledRating>
-			<p>{ratingName}</p>
-			<Score>
-				<RatingText>{rating} / 5</RatingText>
-				<Stars rating={rating} />
-			</Score>
-		</StyledRating>
+		<>
+			{rating && (
+				<StyledRating>
+					<p>{ratingName}</p>
+					<Score>
+						<RatingText>{rating ? rating : "N/A"} / 5</RatingText>
+						<Stars rating={rating} />
+					</Score>
+				</StyledRating>
+			)}
+		</>
 	);
 };
 
