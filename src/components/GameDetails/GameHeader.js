@@ -2,7 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import Stars from "../Stars";
 
-const GameHeader = ({ gameTitle, overAllRating }) => {
+const GameHeader = ({ gameTitle, rating }) => {
+	let numberOfRatings = 0;
+	for (let key in rating) {
+		if (rating[key] != null) {
+			numberOfRatings++;
+		}
+	}
+	const overAllRating =
+		(rating.graphics + rating.gameplay + rating.story) / numberOfRatings;
+
 	return (
 		<StyledGameHeader>
 			<GameTitle>{gameTitle}</GameTitle>

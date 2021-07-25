@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import homeIcon from "../images/home-icon.svg";
+import Search from "./Search";
+const searchIndices = [{ name: `Games`, title: `Games` }];
 
 const Navbar = () => {
 	return (
@@ -10,6 +12,7 @@ const Navbar = () => {
 				<img alt="home" src={homeIcon} />
 				Home
 			</StyledNavLinkElement>
+			<Search indices={searchIndices} />
 		</StyledNavbar>
 	);
 };
@@ -19,10 +22,12 @@ const StyledNavbar = styled.div`
 	margin: auto;
 	margin-bottom: 1.5rem;
 	color: #525252;
+	display: flex;
+	justify-content: space-between;
 	.active {
 		background: #faeaea;
 		border: 2px solid #ffb9b9;
-		color: #ff5959;
+		color: #990000;
 	}
 	@media (max-width: 1600px) {
 		width: 65%;
@@ -55,7 +60,7 @@ const StyledNavLinkElement = styled((props) => <Link {...props} />)`
 	:hover {
 		background: #faeaea;
 		border: 2px solid #ffb9b9;
-		color: #ff5959;
+		color: #990000;
 	}
 	@media (max-width: 475px) {
 		width: 100%;

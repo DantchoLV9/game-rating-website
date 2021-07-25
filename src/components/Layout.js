@@ -1,19 +1,30 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
+import GlobalStyles from "./GlobalStyles";
 import Header from "./Header";
-import "../styles/global.css";
 import Navbar from "./Navbar";
 
 const Layout = ({ pageTitle, children }) => {
+	const data = useStaticQuery(graphql`
+		{
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`);
 	return (
 		<>
+			<GlobalStyles />
 			<Helmet
 				htmlAttributes={{
 					lang: "en",
 				}}
 			>
-				<title>{pageTitle}</title>
+				<title>{`${pageTitle} | ${data.site.siteMetadata.title}`}</title>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 				<link
@@ -29,7 +40,7 @@ const Layout = ({ pageTitle, children }) => {
 				</script>
 			</Helmet>
 			<StyledMain>
-				<Header />
+				<Header title={data.site.siteMetadata.title} />
 				<Navbar />
 				{children}
 			</StyledMain>

@@ -13,6 +13,17 @@ const Article = ({ html }) => {
 
 const StyledArticle = styled.div`
 	margin-bottom: 1rem;
+	h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1.2rem;
+	}
+	p {
+		font-size: 1.2rem;
+		margin-bottom: 0.8rem;
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
 `;
 
 export default Article;

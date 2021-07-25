@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = https://github.com/DantchoLV9/gamer8-content
