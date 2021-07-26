@@ -17,6 +17,9 @@ const StyledLogo = styled.h1`
 	font-family: "Zen Tokyo Zoo", cursive;
 	margin-bottom: 1.5rem;
 	color: #333534;
+	@media (max-width: 475px) {
+		margin-bottom: 0.5rem;
+	}
 `;
 
 export default Header;

@@ -75,6 +75,7 @@ const StyledHit = styled.div`
 		display: flex;
 		justify-content: space-between;
 		p {
+			margin-left: 0.5rem;
 			font-weight: bold;
 			color: #525252;
 		}
@@ -94,8 +95,6 @@ const StyledSearchResults = styled.div`
 	right: 0;
 	top: 100%;
 	margin-top: 0.5em;
-	width: 80vw;
-	max-width: 30em;
 	box-shadow: 0px 0px 3px 0px;
 	border-radius: 10px;
 	background: #f3f5f9;

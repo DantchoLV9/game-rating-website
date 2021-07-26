@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import homeIcon from "../images/home-icon.svg";
+import aboutIcon from "../images/about-icon.svg";
+import moonIcon from "../images/moon-icon.svg";
 import Search from "./Search";
 const searchIndices = [{ name: `Games`, title: `Games` }];
 
@@ -12,7 +14,16 @@ const Navbar = () => {
 				<img alt="home" src={homeIcon} />
 				Home
 			</StyledNavLinkElement>
-			<Search indices={searchIndices} />
+			<StyledNavLinkElement to="/about" activeClassName="active">
+				<img alt="about" src={aboutIcon} />
+				About
+			</StyledNavLinkElement>
+			<AdditionalNavElements>
+				<Search indices={searchIndices} />
+				<ThemeButton>
+					<img alt="theme" src={moonIcon} />
+				</ThemeButton>
+			</AdditionalNavElements>
 		</StyledNavbar>
 	);
 };
@@ -24,6 +35,7 @@ const StyledNavbar = styled.div`
 	color: #525252;
 	display: flex;
 	justify-content: space-between;
+	column-gap: 0.5rem;
 	.active {
 		background: #faeaea;
 		border: 2px solid #ffb9b9;
@@ -39,6 +51,39 @@ const StyledNavbar = styled.div`
 
 	@media (max-width: 780px) {
 		width: 100%;
+	}
+
+	@media (max-width: 475px) {
+		row-gap: 0.2rem;
+		flex-direction: column-reverse;
+		margin-bottom: 1rem;
+		a:nth-child(1) {
+			order: -1;
+		}
+		a:nth-child(2) {
+			order: -2;
+		}
+	}
+`;
+
+const AdditionalNavElements = styled.div`
+	display: flex;
+	flex-grow: 1;
+	column-gap: 0.5rem;
+	justify-content: flex-end;
+	@media (max-width: 475px) {
+		flex-direction: row-reverse;
+	}
+`;
+
+const ThemeButton = styled.div`
+	display: flex;
+	align-items: center;
+	padding: 0 0.5rem;
+	cursor: pointer;
+	img {
+		width: 20px;
+		height: 20px;
 	}
 `;
 

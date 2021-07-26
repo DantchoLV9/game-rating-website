@@ -23,6 +23,7 @@ const StyledForm = styled.form`
 	flex-direction: row-reverse;
 	align-items: center;
 	margin-bottom: 0;
+	width: 100%;
 
 	img {
 		width: 20px;
@@ -33,7 +34,7 @@ const StyledForm = styled.form`
 `;
 
 const OpenInputField = css`
-	width: 15rem;
+	width: 100%;
 	background: #faeaea;
 	cursor: text;
 	margin-left: -1.6rem;
@@ -51,7 +52,8 @@ const ClosedInputField = css`
 const StyledSearchInput = styled.input`
 	outline: none;
 	padding: 0.5rem;
-	border: ${({ hasFocus }) => (hasFocus ? "2px #ffb9b9 solid" : "none")};
+	border: ${({ hasFocus }) =>
+		hasFocus ? "2px #ffb9b9 solid" : "2px transparent solid"};
 	border-radius: 10px;
 	font-size: 1.2rem;
 	transition: 150ms;
