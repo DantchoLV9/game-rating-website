@@ -13,6 +13,7 @@ const StyledSectionHeading = styled.h2`
 	text-align: center;
 	grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
 	margin-bottom: 1rem;
+	width: 100%;
 	&:before {
 		content: "";
 		border-top: 3px solid #cccecd;
