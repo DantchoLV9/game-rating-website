@@ -24,7 +24,6 @@ const StyledForm = styled.form`
 	align-items: center;
 	margin-bottom: 0;
 	width: 100%;
-
 	img {
 		width: 20px;
 		height: 20px;

@@ -97,6 +97,7 @@ const StyledNavLinkElement = styled((props) => <Link {...props} />)`
 	border: 2px solid transparent;
 	border-radius: 10px;
 	padding: 0.5rem;
+	transition: 150ms;
 	img {
 		width: 20px;
 		height: 20px;
