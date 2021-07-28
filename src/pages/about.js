@@ -31,7 +31,8 @@ const IndexPage = () => {
 				<p>
 					My name is Yordan Hristov (Dantcho). I'm a web development student at
 					Falmouth University. Currently focusing on front end web development &
-					web design. Twitter:{" "}
+					web design. Follow me on Twitter if you want to know what I'm working
+					on at the moment!{" "}
 					<a href="https://twitter.com/DantchoLV9">@DantchoLV9</a>.
 				</p>
 			</AboutSection>
