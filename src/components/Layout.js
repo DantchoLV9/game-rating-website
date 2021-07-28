@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import Header from "./Header";
@@ -42,7 +43,13 @@ const Layout = ({ pageTitle, children }) => {
 			<StyledMain>
 				<Header title={data.site.siteMetadata.title} />
 				<Navbar />
-				{children}
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+				>
+					{children}
+				</motion.div>
 			</StyledMain>
 		</>
 	);

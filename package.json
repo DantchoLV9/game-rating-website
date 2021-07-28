@@ -17,6 +17,7 @@
   "dependencies": {
     "algoliasearch": "^4.10.3",
     "babel-plugin-styled-components": "^1.13.2",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.9.0",
     "gatsby-plugin-algolia": "^0.22.0",
     "gatsby-plugin-image": "^1.9.0",
