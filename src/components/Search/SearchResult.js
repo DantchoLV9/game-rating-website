@@ -75,12 +75,13 @@ const StyledHit = styled.div`
 		display: flex;
 		justify-content: space-between;
 		p {
+			margin-left: 0.5rem;
 			font-weight: bold;
-			color: #525252;
+			color: ${(props) => props.theme.fg};
 		}
 	}
 	:hover {
-		background: #ebedf0;
+		background: ${(props) => props.theme.hover};
 	}
 `;
 
@@ -94,11 +95,9 @@ const StyledSearchResults = styled.div`
 	right: 0;
 	top: 100%;
 	margin-top: 0.5em;
-	width: 80vw;
-	max-width: 30em;
-	box-shadow: 0px 0px 3px 0px;
+	border: 2px solid ${(props) => props.theme.border};
 	border-radius: 10px;
-	background: #f3f5f9;
+	background: ${(props) => props.theme.bg};
 	overflow: auto;
 	.no-results-msg {
 		display: flex;
@@ -110,7 +109,7 @@ const StyledSearchResults = styled.div`
 		display: flex;
 		justify-content: flex-start;
 		padding: 0.5rem 0 0.5rem 1rem;
-		border-bottom: 1px solid #d6d6d6;
+		border-bottom: 1px solid ${(props) => props.theme.border};
 	}
 	.hits {
 		ul {
@@ -119,7 +118,7 @@ const StyledSearchResults = styled.div`
 		}
 		li.ais-Hits-item {
 			a {
-				color: #333534;
+				color: ${(props) => props.theme.fg};
 			}
 		}
 	}
@@ -128,7 +127,7 @@ const StyledSearchResults = styled.div`
 		justify-content: center;
 		padding: 1rem;
 		align-items: center;
-		border-top: 1px solid #d6d6d6;
+		border-top: 1px solid ${(props) => props.theme.border};
 		span {
 			margin-right: 0.5rem;
 		}

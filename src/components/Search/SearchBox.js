@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { connectSearchBox } from "react-instantsearch-dom";
-import SearchBoxIcon from "../../images/search-icon.svg";
+import SearchIcon from "../../images/search-icon.js";
 
 const SearchBox = ({ currentRefinement, refine, onFocus, hasFocus }) => (
 	<StyledForm>
@@ -14,7 +14,7 @@ const SearchBox = ({ currentRefinement, refine, onFocus, hasFocus }) => (
 			onChange={(event) => refine(event.currentTarget.value)}
 			onFocus={onFocus}
 		/>
-		<img className="SearchIcon" src={SearchBoxIcon} alt="" />
+		<SearchIcon />
 	</StyledForm>
 );
 
@@ -23,8 +23,11 @@ const StyledForm = styled.form`
 	flex-direction: row-reverse;
 	align-items: center;
 	margin-bottom: 0;
-
-	img {
+	width: 100%;
+	:focus-within {
+		color: ${(props) => props.theme.buttonText};
+	}
+	svg {
 		width: 20px;
 		height: 20px;
 		margin-right: -0.1rem;
@@ -33,8 +36,8 @@ const StyledForm = styled.form`
 `;
 
 const OpenInputField = css`
-	width: 15rem;
-	background: #faeaea;
+	width: 100%;
+	background: ${(props) => props.theme.buttonBG};
 	cursor: text;
 	margin-left: -1.6rem;
 	padding-left: 1.7rem;
@@ -51,12 +54,15 @@ const ClosedInputField = css`
 const StyledSearchInput = styled.input`
 	outline: none;
 	padding: 0.5rem;
-	border: ${({ hasFocus }) => (hasFocus ? "2px #ffb9b9 solid" : "none")};
+	border: 2px transparent solid;
 	border-radius: 10px;
 	font-size: 1.2rem;
 	transition: 150ms;
-	color: #990000;
+	color: ${(props) => props.theme.buttonText};
 	${({ hasFocus }) => (hasFocus ? OpenInputField : ClosedInputField)}
+	:focus {
+		border: 2px solid ${(props) => props.theme.border};
+	}
 `;
 
 export default connectSearchBox(SearchBox);

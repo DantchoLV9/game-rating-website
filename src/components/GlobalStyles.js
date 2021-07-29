@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
         }
     }
     body {
-        background: #f3f5f9;
+        background: ${(props) => props.theme.bg};
         font-family: "Noto Sans TC", sans-serif;
         font-weight: lighter;
     }

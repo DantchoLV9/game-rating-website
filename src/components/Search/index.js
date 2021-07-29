@@ -38,6 +38,9 @@ const Search = ({ indices }) => {
 
 const StyledSearch = styled.div`
 	position: relative;
+	@media (max-width: 780px) {
+		width: 100%;
+	}
 `;
 
 export default Search;
