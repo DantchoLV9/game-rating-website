@@ -25,7 +25,7 @@ const StyledForm = styled.form`
 	margin-bottom: 0;
 	width: 100%;
 	:focus-within {
-		color: #990000;
+		color: ${(props) => props.theme.buttonText};
 	}
 	svg {
 		width: 20px;
@@ -37,7 +37,7 @@ const StyledForm = styled.form`
 
 const OpenInputField = css`
 	width: 100%;
-	background: #faeaea;
+	background: ${(props) => props.theme.buttonBG};
 	cursor: text;
 	margin-left: -1.6rem;
 	padding-left: 1.7rem;
@@ -54,13 +54,15 @@ const ClosedInputField = css`
 const StyledSearchInput = styled.input`
 	outline: none;
 	padding: 0.5rem;
-	border: ${({ hasFocus }) =>
-		hasFocus ? "2px #ffb9b9 solid" : "2px transparent solid"};
+	border: 2px transparent solid;
 	border-radius: 10px;
 	font-size: 1.2rem;
 	transition: 150ms;
-	color: #990000;
+	color: ${(props) => props.theme.buttonText};
 	${({ hasFocus }) => (hasFocus ? OpenInputField : ClosedInputField)}
+	:focus {
+		border: 2px solid ${(props) => props.theme.border};
+	}
 `;
 
 export default connectSearchBox(SearchBox);

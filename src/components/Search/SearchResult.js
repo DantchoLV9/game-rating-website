@@ -95,7 +95,7 @@ const StyledSearchResults = styled.div`
 	right: 0;
 	top: 100%;
 	margin-top: 0.5em;
-	box-shadow: 0px 0px 3px 0px;
+	border: 2px solid ${(props) => props.theme.border};
 	border-radius: 10px;
 	background: ${(props) => props.theme.bg};
 	overflow: auto;
