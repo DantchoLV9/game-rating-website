@@ -16,12 +16,12 @@ const StyledSectionHeading = styled.h2`
 	width: 100%;
 	&:before {
 		content: "";
-		border-top: 3px solid #cccecd;
+		border-top: 3px solid ${(props) => props.theme.border};
 		border-radius: 5px;
 	}
 	&:after {
 		content: "";
-		border-top: 3px solid #cccecd;
+		border-top: 3px solid ${(props) => props.theme.border};
 		border-radius: 5px;
 	}
 `;

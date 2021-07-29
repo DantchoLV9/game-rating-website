@@ -46,7 +46,10 @@ const AboutSection = styled.div`
 	flex-direction: column;
 	width: 50%;
 	margin: auto;
-	color: #333534;
+	color: ${(props) => props.theme.fg};
+	a {
+		color: ${(props) => props.theme.fg};
+	}
 	h3 {
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;

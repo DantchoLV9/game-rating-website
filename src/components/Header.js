@@ -16,7 +16,7 @@ const StyledLogo = styled.h1`
 	text-align: center;
 	font-family: "Zen Tokyo Zoo", cursive;
 	margin-bottom: 1.5rem;
-	color: #333534;
+	color: ${(props) => props.theme.fg};
 	@media (max-width: 475px) {
 		margin-bottom: 0.5rem;
 	}

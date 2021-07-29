@@ -40,7 +40,7 @@ const Score = styled.div`
 
 const RatingText = styled.p`
 	font-size: 1.2rem;
-	color: #525252;
+	color: ${(props) => props.theme.fg};
 `;
 
 export default Rating;

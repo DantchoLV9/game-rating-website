@@ -50,7 +50,7 @@ const OverallScore = styled.div`
 
 const RatingText = styled.p`
 	font-size: 1.3rem;
-	color: #525252;
+	color: ${(props) => props.theme.fg};
 `;
 
 export default GameHeader;

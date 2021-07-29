@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { connectSearchBox } from "react-instantsearch-dom";
-import SearchBoxIcon from "../../images/search-icon.svg";
+import SearchIcon from "../../images/search-icon.js";
 
 const SearchBox = ({ currentRefinement, refine, onFocus, hasFocus }) => (
 	<StyledForm>
@@ -14,7 +14,7 @@ const SearchBox = ({ currentRefinement, refine, onFocus, hasFocus }) => (
 			onChange={(event) => refine(event.currentTarget.value)}
 			onFocus={onFocus}
 		/>
-		<img className="SearchIcon" src={SearchBoxIcon} alt="" />
+		<SearchIcon />
 	</StyledForm>
 );
 
@@ -24,7 +24,10 @@ const StyledForm = styled.form`
 	align-items: center;
 	margin-bottom: 0;
 	width: 100%;
-	img {
+	:focus-within {
+		color: #990000;
+	}
+	svg {
 		width: 20px;
 		height: 20px;
 		margin-right: -0.1rem;

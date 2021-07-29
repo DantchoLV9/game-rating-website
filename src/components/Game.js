@@ -31,12 +31,13 @@ const StyledGame = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 0.5rem;
-	color: #333534;
+	color: ${(props) => props.theme.fg};
 	width: 100%;
 	border-radius: 10px;
 	cursor: pointer;
 	&:hover {
-		box-shadow: -5px -5px 15px 0 #fff, 5px 5px 15px 0 rgba(0, 0, 0, 0.11);
+		box-shadow: -5px -5px 15px 0 ${(props) => props.theme.shadowL},
+			5px 5px 15px 0 ${(props) => props.theme.shadowD};
 	}
 `;
 
@@ -61,7 +62,7 @@ const OverAllRating = styled.div`
 
 const RatingText = styled.p`
 	font-size: 1.3rem;
-	color: #525252;
+	color: ${(props) => props.theme.fg};
 `;
 
 export default Game;

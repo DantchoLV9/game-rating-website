@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import darkTheme from "../themes/dark";
+import lightTheme from "../themes/light";
 
 const Layout = ({ pageTitle, children }) => {
+	const [currentTheme, setCurrentTheme] = useState(lightTheme);
+	useEffect(() => {
+		if (localStorage.getItem("theme") === "light") {
+			setCurrentTheme(lightTheme);
+		} else {
+			setCurrentTheme(darkTheme);
+		}
+	}, []);
+	const switchThemeHandler = () => {
+		if (currentTheme === lightTheme) {
+			setCurrentTheme(darkTheme);
+			localStorage.setItem("theme", "dark");
+		} else {
+			setCurrentTheme(lightTheme);
+			localStorage.setItem("theme", "light");
+		}
+	};
 	const data = useStaticQuery(graphql`
 		{
 			site {
@@ -19,7 +38,6 @@ const Layout = ({ pageTitle, children }) => {
 	`);
 	return (
 		<>
-			<GlobalStyles />
 			<Helmet
 				htmlAttributes={{
 					lang: "en",
@@ -40,18 +58,24 @@ const Layout = ({ pageTitle, children }) => {
 					{`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-QPJVJF2T93');`}
 				</script>
 			</Helmet>
-			<StyledMain>
-				<Header title={data.site.siteMetadata.title} />
-				<Navbar />
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 0.3 }}
-				>
-					{children}
-				</motion.div>
-			</StyledMain>
+			<ThemeProvider theme={currentTheme}>
+				<GlobalStyles />
+				<StyledMain>
+					<Header title={data.site.siteMetadata.title} />
+					<Navbar
+						currentTheme={currentTheme}
+						switchThemeHandler={switchThemeHandler}
+					/>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.3 }}
+					>
+						{children}
+					</motion.div>
+				</StyledMain>
+			</ThemeProvider>
 		</>
 	);
 };
