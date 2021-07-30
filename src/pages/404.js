@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import Layout from "../components/Layout";
+import StyledLink from "../components/StyledLink";
 import styled from "styled-components";
 
 const NotFoundPage = () => {
@@ -16,7 +16,7 @@ const NotFoundPage = () => {
 					we couldn’t find what you were looking for.
 					<br />
 					<br />
-					<Link to="/">Go home</Link>.
+					<StyledLink to="/">Go home</StyledLink>.
 				</p>
 			</NotFoundSection>
 		</Layout>
@@ -30,6 +30,16 @@ const NotFoundSection = styled.div`
 	flex-direction: column;
 	width: 50%;
 	margin: auto;
+	color: ${(props) => props.theme.fg};
+	a {
+		text-decoration: underline;
+	}
+	p {
+		font-size: 1.2rem;
+	}
+	h1 {
+		margin-bottom: 2rem;
+	}
 	@media (max-width: 1600px) {
 		width: 65%;
 	}
@@ -40,9 +50,6 @@ const NotFoundSection = styled.div`
 
 	@media (max-width: 780px) {
 		width: 100%;
-	}
-	h1 {
-		margin-bottom: 2rem;
 	}
 `;
 
