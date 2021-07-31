@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import SectionHeading from "../components/GameDetails/SectionHeading";
+import PackageJson from "../../package.json";
 
 const IndexPage = () => {
 	return (
@@ -27,6 +28,7 @@ const IndexPage = () => {
 					The source code is on{" "}
 					<a href="https://github.com/DantchoLV9/gamer8">Github</a>.
 				</p>
+				<p>Current Version: {PackageJson.version}</p>
 				<h3>The Creator</h3>
 				<p>
 					My name is Yordan Hristov (Dantcho). I'm a web development student at
