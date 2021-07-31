@@ -13,9 +13,19 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
+				name: `GameR8`,
+				short_name: `GameR8`,
+				start_url: `/`,
+				background_color: `#242526`,
+				theme_color: `#FF5959`,
+				display: `standalone`,
 				icon: "src/images/favicon.png",
+				icon_options: {
+					purpose: `any maskable`,
+				},
 			},
 		},
+		`gatsby-plugin-offline`,
 		{
 			resolve: "gatsby-plugin-algolia",
 			options: {
