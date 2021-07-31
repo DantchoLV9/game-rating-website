@@ -10,7 +10,7 @@ import darkTheme from "../themes/dark";
 import lightTheme from "../themes/light";
 
 const Layout = ({ pageTitle, children }) => {
-	const [currentTheme, setCurrentTheme] = useState(lightTheme);
+	const [currentTheme, setCurrentTheme] = useState(darkTheme);
 	useEffect(() => {
 		if (localStorage.getItem("theme") === "light") {
 			setCurrentTheme(lightTheme);

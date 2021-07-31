@@ -23,6 +23,9 @@ exports.createPages = async ({ graphql, actions }) => {
 						fields {
 							slug
 						}
+						frontmatter {
+							date
+						}
 					}
 				}
 			}
@@ -35,6 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
 			component: path.resolve(`./src/templates/GamePage.js`),
 			context: {
 				slug: node.fields.slug,
+				date: node.frontmatter.date,
 			},
 		});
 	});

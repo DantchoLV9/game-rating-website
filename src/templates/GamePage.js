@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import ReviewDate from "../components/GameDetails/ReviewDate";
 import GameHeader from "../components/GameDetails/GameHeader";
 import Image from "../components/GameDetails/Image";
 import Ratings from "../components/GameDetails/Ratings";
@@ -18,6 +19,7 @@ const GamePage = ({ data }) => {
 		<Layout pageTitle={game.frontmatter.title}>
 			<Seo gameSEO gameNode={game} />
 			<GameDetails>
+				<ReviewDate reviewDate={game.frontmatter.date} />
 				<GameHeader
 					gameTitle={game.frontmatter.title}
 					rating={game.frontmatter.rating}
@@ -62,6 +64,7 @@ export const query = graphql`
 			}
 			frontmatter {
 				title
+				date(formatString: "DD MMMM YYYY")
 				rating {
 					gameplay
 					graphics

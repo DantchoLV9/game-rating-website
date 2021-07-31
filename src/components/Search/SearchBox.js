@@ -4,7 +4,7 @@ import { connectSearchBox } from "react-instantsearch-dom";
 import SearchIcon from "../../images/search-icon.js";
 
 const SearchBox = ({ currentRefinement, refine, onFocus, hasFocus }) => (
-	<StyledForm>
+	<StyledForm onSubmit={(e) => e.preventDefault()}>
 		<StyledSearchInput
 			hasFocus={hasFocus}
 			type="search"
