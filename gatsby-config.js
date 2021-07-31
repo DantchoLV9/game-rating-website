@@ -1,6 +1,5 @@
-const { useContext } = require("react");
-
 require("dotenv").config();
+
 module.exports = {
 	siteMetadata: {
 		siteUrl: "https://gamer8.dantcho.com",
@@ -23,6 +22,12 @@ module.exports = {
 				appId: process.env.GATSBY_ALGOLIA_APP_ID,
 				apiKey: process.env.ALGOLIA_ADMIN_KEY,
 				queries: require("./src/utils/algolia-queries"),
+			},
+		},
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: "https://gamer8.dantcho.com",
 			},
 		},
 		{
