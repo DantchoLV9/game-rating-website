@@ -22,7 +22,7 @@ const Navbar = ({ currentTheme, switchThemeHandler }) => {
 			</StyledNavLinkElement>
 			<AdditionalNavElements>
 				<Search indices={searchIndices} />
-				<ThemeButton onClick={switchThemeHandler}>
+				<ThemeButton aria-label="theme" onClick={switchThemeHandler}>
 					{currentTheme === lightTheme ? (
 						<MoonIcon fill={currentTheme.fg} />
 					) : (
