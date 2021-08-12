@@ -8,6 +8,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import darkTheme from "../themes/dark";
 import lightTheme from "../themes/light";
+import Footer from "./Footer";
 
 const Layout = ({ pageTitle, children }) => {
 	const [currentTheme, setCurrentTheme] = useState(darkTheme);
@@ -74,6 +75,7 @@ const Layout = ({ pageTitle, children }) => {
 					>
 						{children}
 					</motion.div>
+					<Footer />
 				</StyledMain>
 			</ThemeProvider>
 		</>

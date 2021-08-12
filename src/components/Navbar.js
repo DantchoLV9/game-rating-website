@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import HomeIcon from "../images/home-icon.js";
 import AboutIcon from "../images/about-icon.js";
+import ContactIcon from "../images/contact-icon.js";
 import SunIcon from "../images/sun-icon.js";
 import MoonIcon from "../images/moon-icon.js";
 import Search from "./Search";
@@ -19,6 +20,10 @@ const Navbar = ({ currentTheme, switchThemeHandler }) => {
 			<StyledNavLinkElement to="/about" activeClassName="active">
 				<AboutIcon />
 				About
+			</StyledNavLinkElement>
+			<StyledNavLinkElement to="/contact" activeClassName="active">
+				<ContactIcon />
+				Contact
 			</StyledNavLinkElement>
 			<AdditionalNavElements>
 				<Search indices={searchIndices} />
@@ -57,18 +62,21 @@ const StyledNavbar = styled.div`
 
 	@media (max-width: 780px) {
 		width: 100%;
-	}
-
-	@media (max-width: 475px) {
 		row-gap: 0.2rem;
 		flex-direction: column-reverse;
-		margin-bottom: 1rem;
 		a:nth-child(1) {
 			order: -1;
 		}
 		a:nth-child(2) {
 			order: -2;
 		}
+		a:nth-child(3) {
+			order: -3;
+		}
+	}
+
+	@media (max-width: 475px) {
+		margin-bottom: 1rem;
 	}
 `;
 
