@@ -69,7 +69,7 @@ const ContactSection = styled.div`
 			border: 2px solid transparent;
 			border-radius: 5px;
 			font-size: 1.2rem;
-			color: ${(props) => props.theme.color};
+			color: ${(props) => props.theme.fg};
 			cursor: pointer;
 			transition: 150ms;
 			:hover {

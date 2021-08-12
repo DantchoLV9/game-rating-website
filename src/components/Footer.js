@@ -16,6 +16,8 @@ const StyledFooter = styled.footer`
 	margin: auto;
 	margin-top: 2rem;
 	text-align: center;
+	font-size: 1.2rem;
+	color: ${(props) => props.theme.fg};
 	a {
 		text-decoration: underline;
 	}
