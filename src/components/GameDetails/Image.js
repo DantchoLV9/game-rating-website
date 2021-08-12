@@ -24,7 +24,7 @@ const Image = ({ image, alt }) => {
 	};
 
 	useEffect(() => {
-		return closeImageModalHandler();
+		return () => closeImageModalHandler();
 	}, []);
 
 	useKeypress("Escape", closeImageModalHandler);
@@ -78,7 +78,7 @@ const ImageModalBackground = styled.div`
 
 const ModalImage = styled((props) => <GatsbyImage {...props} />)`
 	border-radius: 10px;
-	max-width: 100%;
+	max-width: 90%;
 	cursor: default;
 `;
 

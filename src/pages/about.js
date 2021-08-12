@@ -6,7 +6,7 @@ import Seo from "../components/Seo";
 import SectionHeading from "../components/GameDetails/SectionHeading";
 import PackageJson from "../../package.json";
 
-const IndexPage = () => {
+const AboutPage = () => {
 	return (
 		<Layout pageTitle="About">
 			<Seo />
@@ -33,9 +33,9 @@ const IndexPage = () => {
 				<p>
 					My name is Yordan Hristov (Dantcho). I'm a web development student at
 					Falmouth University. Currently focusing on front end web development &
-					web design. Follow me on Twitter if you want to know what I'm working
-					on at the moment!{" "}
-					<a href="https://twitter.com/DantchoLV9">@DantchoLV9</a>.
+					web design. Follow me on Twitter{" "}
+					<a href="https://twitter.com/DantchoLV9">@DantchoLV9</a> if you want
+					to know what I'm working on at the moment!
 				</p>
 			</AboutSection>
 		</Layout>
@@ -84,4 +84,4 @@ export const query = graphql`
 	}
 `;
 
-export default IndexPage;
+export default AboutPage;
