@@ -54,7 +54,7 @@ export const query = graphql`
 				title
 			}
 		}
-		allMarkdownRemark {
+		allMarkdownRemark(sort: { fields: frontmatter___title, order: ASC }) {
 			edges {
 				node {
 					frontmatter {
