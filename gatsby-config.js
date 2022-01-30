@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
 	siteMetadata: {
-		siteUrl: "https://gamer8.dantcho.com",
+		siteUrl: "https://gamer8.net",
 		title: "GameR8",
 	},
 	plugins: [
@@ -37,13 +37,13 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
-				siteUrl: "https://gamer8.dantcho.com",
+				siteUrl: "https://gamer8.net",
 			},
 		},
 		{
 			resolve: `gatsby-plugin-sitemap`,
 			options: {
-				excludes: ["/about"],
+				excludes: ["/about", "/contact"],
 				query: `{
 					site {
 						siteMetadata {
