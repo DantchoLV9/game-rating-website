@@ -24,6 +24,10 @@ const StyledArticle = styled.div`
 			margin-bottom: 0;
 		}
 	}
+	a {
+		text-decoration: underline;
+		color: inherit;
+	}
 `;
 
 export default Article;
